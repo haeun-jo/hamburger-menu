@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,600,800&display=swap");
+
+$indigo: #bac8ff;
+$gray: #495057;
+$white: #fff;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
+  .wrapper {
+    padding: 0 48px;
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      p {
+        font-size: .75rem;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $gray;
+      }
+      h5 {
+        margin-top: 260px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-right: 360px;
+        color: $gray;
+      }
+    }
+  }
+}
+
+
+// Header
+
+header {
+  height: 100px;
+  .inner-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    height: 100px;
+    .logo a {
+      font-weight: 700;
+      text-decoration: none;
+      color: $gray;
+    }
+    .menu {
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: .8rem;
+        color: $gray;
+      }
+    }
+  }
+
+  // hamburger menu or navigation whatever
+  .hamburger-menu {
+    display: none;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .menu-secondary-background-color {
+      background-color: $gray;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    .menu-layer {
+      position: relative;
+      background-color: $indigo;
+      height: 100%;
+      overflow: hidden;
+      .menu-city-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: cameraPan 30s infinite;
+      }
+      .wrapper {
+        position: relative;
+        .menu-links {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          top: 200px;
+          nav {
+            display: block;
+            ul {
+              padding: 0;
+              margin: 0;
+              li {
+                width: 700px;
+                height: 135px;
+                position: relative;
+                list-style: none;
+                font-size: 6rem;
+                font-weight: 700;
+                cursor: pointer;
+                overflow: hidden;
+                a {
+                  position: absolute;
+                  color: $white;
+                  text-decoration: none;
+                  &:hover {
+                    color: $gray;
+                  }
+                }
+              }
+            }
+          }
+          .info {
+            color: $white;
+            width: 300px;
+            h3 {
+              font-size: 1.2rem;
+              margin: 8px auto;
+            }
+            p {
+              margin: 0 auto;
+              font-size: .8rem;
+            }
+          }
+        }
+        .locations {
+          position: absolute;
+          bottom: -80px;
+          color: $white;
+          margin-top: 16px;
+          font-size: .8rem;
+          font-weight: 600;
+          span {
+            &:first-child {
+              margin-left: 64px;
+            }
+            font-weight: 400;
+            cursor: pointer;
+            margin: 0 32px;
+            transition: .3s ease-in-out;
+            &:hover {
+              background-color: $gray;
+              padding: 8px 24px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes cameraPan {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 40% 10%;
+  }
+  50% {
+    background-position: 0% 10%;
+  }
+  75% {
+    background-position: 10% 40%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
